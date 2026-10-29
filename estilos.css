@@ -1,0 +1,110 @@
+/* Estilos compartidos del Hotel Terror */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: #171717;
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+.site-header {
+  min-height: 90px;
+  background: #2f8e2b;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 2px max(6%, calc((100% - 960px) / 2));
+  border-bottom: 5px solid #777;
+}
+.brand { display: inline-flex; flex: 0 0 auto; text-decoration: none; }
+.brand img { display: block; width: 80px; height: 80px; object-fit: contain; }
+.site-header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(28px, 7vw, 100px);
+  margin-left: auto;
+}
+.site-header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 26px;
+  line-height: 1.2;
+  padding: 12px 4px;
+  transition: color .2s, text-decoration-color .2s;
+}
+.site-header nav a:hover,
+.site-header nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 6px; }
+.hero {
+  height: 575px;
+  min-height: 440px;
+  display: block;
+  padding: 34px 24px;
+  background: url('../img/fondoindex.jpg') center center / cover no-repeat;
+  color: #ff1237;
+}
+.hero-content { max-width: 1040px; margin: 0 auto; }
+.hero h1 { margin: 0 0 2px; font-size: 46px; line-height: 1.25; font-weight: 700; }
+.hero p { margin: 0; font-size: 32px; line-height: 1.35; font-weight: 700; }
+.site-footer {
+  background: #2f8e2b;
+  color: #101010;
+  text-align: left;
+  padding: 26px max(6%, calc((100% - 960px) / 2)) 20px;
+  min-height: 125px;
+  font-size: 16px;
+}
+.site-footer p { margin: 5px 0 28px; }
+.site-footer a { color: #fff; }
+.site-footer .license { display: inline-block; vertical-align: middle; margin-left: 4px; }
+.site-footer .license img { width: 100px; height: auto; display: block; }
+/* Pàgina de preus */
+.content { max-width: 1180px; margin: 0 auto; padding: 36px 24px 50px; }
+.page-intro { text-align: center; margin: 0 auto 28px; max-width: 750px; }
+.page-intro h1 { font-size: clamp(30px, 4vw, 42px); margin: 5px 0 8px; }
+.page-intro p { margin-top: 0; }
+.eyebrow { text-transform: uppercase; letter-spacing: 2px; font-weight: bold; font-size: 13px; }
+.table-wrap { overflow-x: auto; background: white; }
+table { width: 100%; border-collapse: collapse; min-width: 750px; }
+caption { text-align: left; font-size: 18px; font-weight: bold; padding: 16px; background: #2f8e2b; color: white; }
+th, td { padding: 12px; text-align: left; border: 1px solid #ccc; }
+thead th { background: #2f8e2b; color: white; }
+tbody tr:nth-child(even) { background: #f1f5ef; }
+.room-img { width: 95px; height: 72px; object-fit: contain; }
+.price { font-weight: bold; white-space: nowrap; }
+.note { color: #555; font-size: 14px; margin: 20px 0; }
+.button { display: inline-block; border: 0; background: #2f8e2b; color: white; text-decoration: none; padding: 11px 20px; font: inherit; cursor: pointer; }
+.button:hover { background: #246d21; }
+.button-secondary { background: #555; }
+/* Formulari de reserva */
+.booking-form { max-width: 900px; margin: 0 auto; }
+fieldset { border: 1px solid #bbb; background: #fff; padding: 20px; margin: 0 0 20px; }
+legend { font-size: 20px; font-weight: bold; padding: 0 8px; }
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 17px 22px; }
+label { display: flex; flex-direction: column; gap: 6px; font-weight: bold; font-size: 14px; }
+.form-grid input:not([type=checkbox]), select, textarea { width: 100%; padding: 10px 12px; border: 1px solid #aaa; background: #fff; color: #222; font: inherit; font-weight: normal; }
+input:focus, select:focus, textarea:focus { outline: 2px solid #2f8e2b; outline-offset: 1px; }
+.full { grid-column: 1 / -1; }
+small { display: block; color: #555; font-size: 12px; font-weight: normal; }
+.choice-group { display: flex; flex-direction: column; gap: 8px; }
+.field-label { font-weight: bold; font-size: 14px; }
+.inline { display: flex; flex-direction: row; align-items: center; gap: 9px; font-weight: normal; }
+.inline input { width: 17px; height: 17px; accent-color: #2f8e2b; }
+.form-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+@media (max-width: 720px) {
+  .site-header { flex-direction: column; justify-content: center; padding: 8px 12px 12px; gap: 4px; }
+  .brand img { width: 66px; height: 66px; }
+  .site-header nav { justify-content: center; flex-wrap: wrap; gap: 12px 25px; margin: 0; }
+  .site-header nav a { font-size: 20px; }
+  .hero { height: 62vh; min-height: 390px; padding: 28px 18px; background-position: center; }
+  .hero h1 { font-size: clamp(30px, 8vw, 46px); }
+  .hero p { font-size: clamp(23px, 6vw, 32px); }
+  .site-footer { padding: 22px 18px; }
+  .content { padding: 28px 14px 40px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .full { grid-column: auto; }
+  fieldset { padding: 16px; }
+}
